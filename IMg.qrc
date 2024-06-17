@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>R-C.gif</file>
+        <file>R-C.jpg</file>
+        <file>weather.png</file>
+        <file>camera.jpg</file>
+    </qresource>
+</RCC>
