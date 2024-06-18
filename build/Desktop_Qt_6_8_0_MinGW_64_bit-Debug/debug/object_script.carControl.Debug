@@ -1,0 +1,12 @@
+debug/camera.o
+debug/login.o
+debug/main.o
+debug/middlecontrol.o
+debug/weather.o
+debug/widget.o
+debug/qrc_IMg.o
+debug/moc_camera.o
+debug/moc_login.o
+debug/moc_middlecontrol.o
+debug/moc_weather.o
+debug/moc_widget.o

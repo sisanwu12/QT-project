@@ -1,8 +1,7 @@
 #ifndef MIDDLECONTROL_H
 #define MIDDLECONTROL_H
-
 #include <QWidget>
-
+#include <camera.h>
 namespace Ui {
 class middleControl;
 }

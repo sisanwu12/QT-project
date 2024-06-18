@@ -1,0 +1,12 @@
+release/camera.o
+release/login.o
+release/main.o
+release/middlecontrol.o
+release/weather.o
+release/widget.o
+release/qrc_IMg.o
+release/moc_camera.o
+release/moc_login.o
+release/moc_middlecontrol.o
+release/moc_weather.o
+release/moc_widget.o

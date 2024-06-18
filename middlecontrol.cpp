@@ -24,7 +24,9 @@ middleControl::~middleControl()
 
 void middleControl::on_cameraButton_2_clicked()
 {
-
+    this->close();
+    camera*cam=new camera();
+    cam->show();
 }
 
 

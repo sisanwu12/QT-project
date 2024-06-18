@@ -6,9 +6,11 @@ login::login(QWidget *parent)
     , ui(new Ui::login)
 {
     ui->setupUi(this);
+    sound->setSource(QUrl::fromLocalFile(":/ys.wav"));
+    sound->play();
     QTimer*timer1=new QTimer();
     timer1->start(tOut);
-    timer2->start(3000);
+    timer2->start(5000);
     connect(timer1,&QTimer::timeout,this,&login::updateTime);
     connect(timer2,&QTimer::timeout,this,&login::closed);
 }
@@ -29,6 +31,7 @@ void login::updateTime(){
 void login::closed(){
     timer2->stop();
     this->close();
+    sound->stop();
     middleControl*midCon=new middleControl();
     midCon->show();
 }
