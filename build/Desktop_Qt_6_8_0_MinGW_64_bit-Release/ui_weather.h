@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +19,20 @@ QT_BEGIN_NAMESPACE
 class Ui_weather
 {
 public:
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
 
     void setupUi(QWidget *weather)
     {
         if (weather->objectName().isEmpty())
             weather->setObjectName("weather");
-        weather->resize(790, 675);
+        weather->resize(811, 675);
+        horizontalLayoutWidget = new QWidget(weather);
+        horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
+        horizontalLayoutWidget->setGeometry(QRect(450, 70, 281, 141));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
 
         retranslateUi(weather);
 

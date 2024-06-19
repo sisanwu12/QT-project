@@ -13,7 +13,7 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DISABLE_DEPRECATED_BEFORE=0x060000 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
+DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I../../../carControl -I. -I../../../../qt/6.8.0/mingw_64/include -I../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets -I../../../../qt/6.8.0/mingw_64/include/QtMultimedia -I../../../../qt/6.8.0/mingw_64/include/QtWidgets -I../../../../qt/6.8.0/mingw_64/include/QtGui -I../../../../qt/6.8.0/mingw_64/include/QtNetwork -I../../../../qt/6.8.0/mingw_64/include/QtCore -Idebug -I. -I/include -I../../../../qt/6.8.0/mingw_64/mkspecs/win32-g++ 
@@ -132,7 +132,8 @@ debug/qrc_IMg.cpp: ../../IMg.qrc \
 		../../ys.wav \
 		../../weather.png \
 		../../camera.jpg \
-		../../R-C.jpg
+		../../R-C.jpg \
+		../../weather.jpg
 	D:\qt\6.8.0\mingw_64\bin\rcc.exe -name IMg --no-zstd ..\..\IMg.qrc -o debug\qrc_IMg.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -1480,6 +1481,17 @@ debug/camera.o: ../../camera.cpp ../../camera.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
 		ui_camera.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QVariant \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qlayout.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QCameraDevice \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaCaptureSession \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediacapturesession.h
@@ -1713,7 +1725,8 @@ debug/login.o: ../../login.cpp ../../login.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QLCDNumber \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qlcdnumber.h \
-		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qframe.h
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QDateTime
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\login.o ..\..\login.cpp
 
 debug/main.o: ../../main.cpp ../../widget.h \
@@ -2177,6 +2190,7 @@ debug/middlecontrol.o: ../../middlecontrol.cpp ../../middlecontrol.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../weather.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtGui/QIcon
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\middlecontrol.o ..\..\middlecontrol.cpp
 
@@ -2370,7 +2384,14 @@ debug/weather.o: ../../weather.cpp ../../weather.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qinputmethod.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		ui_weather.h
+		ui_weather.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QVariant \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/QPainter \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qpainter.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qtextoption.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\weather.o ..\..\weather.cpp
 
 debug/widget.o: ../../widget.cpp ../../widget.h \

@@ -20,11 +20,13 @@ public:
     ~login();
      void paintEvent(QPaintEvent*event);
     QTimer*timer2=new QTimer();
+     QTimer*timer3=new QTimer();
     QSoundEffect*sound=new QSoundEffect(this);
 
 private slots:
      void updateTime();
     void closed();
+     void updateDay();
 
 private:
     Ui::login *ui;

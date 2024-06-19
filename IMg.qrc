@@ -5,5 +5,7 @@
         <file>weather.png</file>
         <file>camera.jpg</file>
         <file>ys.wav</file>
+        <file>weather.jpg</file>
+        <file>s19.png</file>
     </qresource>
 </RCC>

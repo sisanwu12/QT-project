@@ -132,7 +132,9 @@ debug/qrc_IMg.cpp: ../../IMg.qrc \
 		../../ys.wav \
 		../../weather.png \
 		../../camera.jpg \
-		../../R-C.jpg
+		../../s19.png \
+		../../R-C.jpg \
+		../../weather.jpg
 	D:\qt\6.8.0\mingw_64\bin\rcc.exe -name IMg --no-zstd ..\..\IMg.qrc -o debug\qrc_IMg.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -351,6 +353,10 @@ debug/moc_camera.cpp: ../../camera.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
+		../../middlecontrol.h \
+		../../camera.h \
 		debug/moc_predefs.h \
 		../../../../qt/6.8.0/mingw_64/bin/moc.exe
 	D:\qt\6.8.0\mingw_64\bin\moc.exe $(DEFINES) --include D:/qtcode/carControl/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/qt/6.8.0/mingw_64/mkspecs/win32-g++ -ID:/qtcode/carControl -ID:/qt/6.8.0/mingw_64/include -ID:/qt/6.8.0/mingw_64/include/QtMultimediaWidgets -ID:/qt/6.8.0/mingw_64/include/QtMultimedia -ID:/qt/6.8.0/mingw_64/include/QtWidgets -ID:/qt/6.8.0/mingw_64/include/QtGui -ID:/qt/6.8.0/mingw_64/include/QtNetwork -ID:/qt/6.8.0/mingw_64/include/QtCore -I. -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\camera.h -o debug\moc_camera.cpp
@@ -574,6 +580,8 @@ debug/moc_login.cpp: ../../login.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QSoundEffect \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qsoundeffect.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qaudio.h \
@@ -789,11 +797,15 @@ debug/moc_middlecontrol.cpp: ../../middlecontrol.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
+		../../middlecontrol.h \
 		debug/moc_predefs.h \
 		../../../../qt/6.8.0/mingw_64/bin/moc.exe
 	D:\qt\6.8.0\mingw_64\bin\moc.exe $(DEFINES) --include D:/qtcode/carControl/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/qt/6.8.0/mingw_64/mkspecs/win32-g++ -ID:/qtcode/carControl -ID:/qt/6.8.0/mingw_64/include -ID:/qt/6.8.0/mingw_64/include/QtMultimediaWidgets -ID:/qt/6.8.0/mingw_64/include/QtMultimedia -ID:/qt/6.8.0/mingw_64/include/QtWidgets -ID:/qt/6.8.0/mingw_64/include/QtGui -ID:/qt/6.8.0/mingw_64/include/QtNetwork -ID:/qt/6.8.0/mingw_64/include/QtCore -I. -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\middlecontrol.h -o debug\moc_middlecontrol.cpp
 
 debug/moc_weather.cpp: ../../weather.h \
+		../../middlecontrol.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qwidget.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -983,6 +995,57 @@ debug/moc_weather.cpp: ../../weather.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qinputmethod.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../camera.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QCamera \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qcamera.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qcameradevice.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qtvideo.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qvideoframe.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qvideoframeformat.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qmetaobject.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/QVideoWidget \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qvideowidget.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsglobal.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qhttpheaders.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QSharedDataPointer \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QString \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QUrl \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QVariant \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslerror.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qcryptographichash.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qdatetime.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qcalendar.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qssl.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QFlags \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QMetaType \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkReply \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkreply.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QIODevice \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkRequest \
 		debug/moc_predefs.h \
 		../../../../qt/6.8.0/mingw_64/bin/moc.exe
 	D:\qt\6.8.0\mingw_64\bin\moc.exe $(DEFINES) --include D:/qtcode/carControl/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/qt/6.8.0/mingw_64/mkspecs/win32-g++ -ID:/qtcode/carControl -ID:/qt/6.8.0/mingw_64/include -ID:/qt/6.8.0/mingw_64/include/QtMultimediaWidgets -ID:/qt/6.8.0/mingw_64/include/QtMultimedia -ID:/qt/6.8.0/mingw_64/include/QtWidgets -ID:/qt/6.8.0/mingw_64/include/QtGui -ID:/qt/6.8.0/mingw_64/include/QtNetwork -ID:/qt/6.8.0/mingw_64/include/QtCore -I. -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -ID:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -ID:/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\weather.h -o debug\moc_weather.cpp
@@ -1226,6 +1289,8 @@ debug/moc_widget.cpp: ../../widget.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QSoundEffect \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qsoundeffect.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qaudio.h \
@@ -1479,6 +1544,9 @@ debug/camera.o: ../../camera.cpp ../../camera.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
+		../../middlecontrol.h \
 		ui_camera.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QVariant \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -1715,6 +1783,8 @@ debug/login.o: ../../login.cpp ../../login.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QSoundEffect \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qsoundeffect.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qaudio.h \
@@ -1724,7 +1794,12 @@ debug/login.o: ../../login.cpp ../../login.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QLCDNumber \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qlcdnumber.h \
-		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qframe.h
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QLabel \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qlabel.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QDateTime
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\login.o ..\..\login.cpp
 
 debug/main.o: ../../main.cpp ../../widget.h \
@@ -1966,6 +2041,8 @@ debug/main.o: ../../main.cpp ../../widget.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QSoundEffect \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qsoundeffect.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qaudio.h \
@@ -2181,6 +2258,8 @@ debug/middlecontrol.o: ../../middlecontrol.cpp ../../middlecontrol.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
 		ui_middlecontrol.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QVariant \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -2188,10 +2267,42 @@ debug/middlecontrol.o: ../../middlecontrol.cpp ../../middlecontrol.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../weather.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qhttpheaders.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QSharedDataPointer \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QString \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QUrl \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslerror.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qcryptographichash.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qdatetime.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qcalendar.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qssl.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QFlags \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QMetaType \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkReply \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkreply.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QIODevice \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkRequest \
 		../../../../../../qt/6.8.0/mingw_64/include/QtGui/QIcon
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\middlecontrol.o ..\..\middlecontrol.cpp
 
 debug/weather.o: ../../weather.cpp ../../weather.h \
+		../../middlecontrol.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qwidget.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -2381,10 +2492,79 @@ debug/weather.o: ../../weather.cpp ../../weather.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qinputmethod.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		ui_weather.h \
+		../../camera.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QCamera \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qcamera.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qcameradevice.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qtvideo.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qvideoframe.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qvideoframeformat.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qmetaobject.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/QVideoWidget \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qvideowidget.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsglobal.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
+		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qhttpheaders.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QSharedDataPointer \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QString \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QUrl \
 		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QVariant \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslerror.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qcryptographichash.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qdatetime.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/qcalendar.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qssl.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QFlags \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QMetaType \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkReply \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/qnetworkreply.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QIODevice \
+		../../../../../../qt/6.8.0/mingw_64/include/QtNetwork/QNetworkRequest \
+		ui_weather.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
-		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QLineEdit \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qtextcursor.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qtextformat.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qpen.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qtextoption.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/QPainter \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/qpainter.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtGui/QIcon \
+		../../../../../../qt/6.8.0/mingw_64/include/QtCore/QDebug \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qdialog.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\weather.o ..\..\weather.cpp
 
 debug/widget.o: ../../widget.cpp ../../widget.h \
@@ -2626,6 +2806,8 @@ debug/widget.o: ../../widget.cpp ../../widget.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QMediaDevices \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qmediadevices.h \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+		../../../../../../qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/QSoundEffect \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qsoundeffect.h \
 		../../../../../../qt/6.8.0/mingw_64/include/QtMultimedia/qaudio.h \

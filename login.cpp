@@ -1,6 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
-
+#include<QDateTime>
 login::login(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::login)
@@ -11,8 +11,10 @@ login::login(QWidget *parent)
     QTimer*timer1=new QTimer();
     timer1->start(tOut);
     timer2->start(5000);
+    timer3->start(1000);
     connect(timer1,&QTimer::timeout,this,&login::updateTime);
     connect(timer2,&QTimer::timeout,this,&login::closed);
+    connect(timer3,&QTimer::timeout,this,&login::updateDay);
 }
 
 void login::paintEvent(QPaintEvent *event)
@@ -25,6 +27,15 @@ void login::updateTime(){
     QTime currentTime=QTime::currentTime();
     QString timestr=currentTime.toString("hh:mm");
     ui->lcdN->display(timestr);
+
+}
+
+void login::updateDay(){
+    // QFont t_font;
+    // t_font.setPointSize(19);
+    QDateTime t_time=QDateTime::currentDateTime();
+    QString tStr=t_time.toString("ddd yyy-MM-dd");
+    ui->label->setText(tStr);
 
 }
 

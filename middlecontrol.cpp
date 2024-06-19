@@ -1,5 +1,6 @@
 #include "middlecontrol.h"
 #include "ui_middlecontrol.h"
+#include<weather.h>
 #include<QIcon>
 middleControl::middleControl(QWidget *parent)
     : QWidget(parent)
@@ -32,6 +33,8 @@ void middleControl::on_cameraButton_2_clicked()
 
 void middleControl::on_weatherButton_clicked()
 {
-
+    this->close();
+    weather*we=new weather();
+    we->show();
 }
 

@@ -11,6 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +20,20 @@ QT_BEGIN_NAMESPACE
 class Ui_weather
 {
 public:
+    QLineEdit *lineEdit;
+    QPushButton *foundButton;
 
     void setupUi(QWidget *weather)
     {
         if (weather->objectName().isEmpty())
             weather->setObjectName("weather");
-        weather->resize(790, 675);
+        weather->resize(811, 675);
+        lineEdit = new QLineEdit(weather);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(40, 20, 161, 21));
+        foundButton = new QPushButton(weather);
+        foundButton->setObjectName("foundButton");
+        foundButton->setGeometry(QRect(220, 10, 41, 41));
 
         retranslateUi(weather);
 
@@ -33,6 +43,7 @@ public:
     void retranslateUi(QWidget *weather)
     {
         weather->setWindowTitle(QCoreApplication::translate("weather", "Form", nullptr));
+        foundButton->setText(QString());
     } // retranslateUi
 
 };
