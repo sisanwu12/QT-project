@@ -10,6 +10,11 @@ camera::camera(QWidget *parent)
     QVideoWidget*shoWid=new QVideoWidget;
     ui->verticalLayout->addWidget(shoWid);
     openCamera(shoWid);
+    mEXitMenu=new QMenu(this);
+    mExitAct=new QAction();
+    mExitAct->setText("退出");
+    mEXitMenu->addAction(mExitAct);
+    connect(mExitAct,&QAction::triggered,this,&camera::quit);
 }
 
 void camera::openCamera(QVideoWidget*showWidget){
@@ -17,8 +22,18 @@ void camera::openCamera(QVideoWidget*showWidget){
     videoSession->setCamera(cam);
     videoSession->setVideoOutput(showWidget);
     cam->start();
-
 }
+void camera::quit(){
+    this->close();
+    middleControl*midC=new middleControl();
+    midC->show();
+}
+
+void camera::contextMenuEvent(QContextMenuEvent*event){
+    //  弹出右键菜单事件
+    mEXitMenu->exec(QCursor::pos());
+}
+
 camera::~camera()
 {
     delete ui;

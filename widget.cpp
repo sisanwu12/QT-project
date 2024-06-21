@@ -6,7 +6,7 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
     // QLabel*label=new QLabel(this);
-    QMovie *movie=new QMovie("D:\\照片\\R-C.gif",QByteArray(),ui->label_2);
+    QMovie *movie=new QMovie(":/R-C.gif",QByteArray(),ui->label_2);
      connect(timer,&QTimer::timeout,this,&Widget::closed);
     ui->label_2->setMovie(movie);
     movie->start();

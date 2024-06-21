@@ -16,19 +16,23 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>100</y>
-     <width>331</width>
-     <height>81</height>
+     <x>160</x>
+     <y>110</y>
+     <width>421</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>18</pointsize>
+     <family>华文琥珀</family>
+     <pointsize>24</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 170, 0);</string>
+   </property>
    <property name="text">
-    <string>智能车载系统启动中</string>
+    <string>亚比智能车载系统启动中</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

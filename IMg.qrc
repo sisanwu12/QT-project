@@ -5,5 +5,12 @@
         <file>weather.png</file>
         <file>camera.jpg</file>
         <file>ys.wav</file>
+        <file>weather.jpg</file>
+        <file>s19.png</file>
+        <file>aqi.png</file>
+        <file>humidity.png</file>
+        <file>pm25.png</file>
+        <file>sunrise.png</file>
+        <file>wind.png</file>
     </qresource>
 </RCC>
