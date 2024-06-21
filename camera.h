@@ -1,6 +1,6 @@
 #ifndef CAMERA_H
 #define CAMERA_H
-
+#pragma GCC diagnostic ignored "-Wunused-function"
 #include <QWidget>
 #include<QCamera>
 #include<QVideoWidget>

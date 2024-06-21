@@ -6,6 +6,8 @@
 #include<QTime>
 #include<middlecontrol.h>
 #include<QSoundEffect>
+#pragma GCC diagnostic ignored "-Wunused-function"
+
 #define tOut 1*100
 namespace Ui {
 class login;

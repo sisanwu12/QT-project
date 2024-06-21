@@ -2,7 +2,9 @@ QT       += core gui
 QT  +=multimedia
 QT  +=multimediawidgets
 QT  +=network
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 CONFIG += c++17
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -21,6 +23,7 @@ HEADERS += \
     login.h \
     middlecontrol.h \
     weather.h \
+    weatherDate.h \
     widget.h
 
 FORMS += \
