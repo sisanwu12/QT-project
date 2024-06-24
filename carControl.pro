@@ -2,6 +2,9 @@ QT       += core gui
 QT  +=multimedia
 QT  +=multimediawidgets
 QT  +=network
+INCLUDEPATH += $$PWD/AIUI/include/aiui
+LIBS += -L$$PWD/AIUI/libs/x64 -laiui
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,6 +14,7 @@ CONFIG += c++17
 # DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    aiuiwindow.cpp \
     camera.cpp \
     login.cpp \
     main.cpp \
@@ -19,6 +23,7 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
+    aiuiwindow.h \
     camera.h \
     login.h \
     middlecontrol.h \
@@ -27,6 +32,7 @@ HEADERS += \
     widget.h
 
 FORMS += \
+    aiuiwindow.ui \
     camera.ui \
     login.ui \
     middlecontrol.ui \
@@ -42,3 +48,11 @@ RESOURCES += \
     IMg.qrc
 
 DISTFILES +=
+
+win32: LIBS += -L$$PWD/libs/x64/ -laiui
+
+INCLUDEPATH += $$PWD/libs/x64
+DEPENDPATH += $$PWD/libs/x64
+
+win32:!win32-g++: PRE_TARGETDEPS += $$PWD/libs/x64/aiui.lib
+else:win32-g++: PRE_TARGETDEPS += $$PWD/libs/x64/libaiui.a

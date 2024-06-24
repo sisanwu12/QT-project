@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +21,7 @@ class Ui_login
 {
 public:
     QLCDNumber *lcdN;
+    QLabel *label;
 
     void setupUi(QWidget *login)
     {
@@ -30,6 +32,14 @@ public:
         lcdN->setObjectName("lcdN");
         lcdN->setGeometry(QRect(200, 260, 421, 91));
         lcdN->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);"));
+        label = new QLabel(login);
+        label->setObjectName("label");
+        label->setGeometry(QRect(200, 90, 441, 111));
+        QFont font;
+        font.setPointSize(36);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label->setAlignment(Qt::AlignCenter);
 
         retranslateUi(login);
 
@@ -39,6 +49,7 @@ public:
     void retranslateUi(QWidget *login)
     {
         login->setWindowTitle(QCoreApplication::translate("login", "Form", nullptr));
+        label->setText(QString());
     } // retranslateUi
 
 };
