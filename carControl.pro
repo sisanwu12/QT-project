@@ -24,6 +24,7 @@ HEADERS += \
     middlecontrol.h \
     weather.h \
     weatherDate.h \
+    weatherTool.h \
     widget.h
 
 FORMS += \
