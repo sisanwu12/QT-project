@@ -8,9 +8,41 @@
         <file>weather.jpg</file>
         <file>s19.png</file>
         <file>aqi.png</file>
-        <file>humidity.png</file>
-        <file>pm25.png</file>
         <file>sunrise.png</file>
         <file>wind.png</file>
+        <file>baoxue.png</file>
+        <file>baoxueblue.png</file>
+        <file>baoyu.png</file>
+        <file>baoyudaodabaoyu.png</file>
+        <file>dabaoyu.png</file>
+        <file>dabaoyudaotedabaoyu.png</file>
+        <file>daxue.png</file>
+        <file>dayu.png</file>
+        <file>duoyun.png</file>
+        <file>fuchen.png</file>
+        <file>leizhengyu.png</file>
+        <file>leizhengyubanyoubingbao.png</file>
+        <file>mai.png</file>
+        <file>xiaodaozhongxue.png</file>
+        <file>xiaodaozhongyu.png</file>
+        <file>xiaoxue.png</file>
+        <file>xiaoyu.png</file>
+        <file>dongyu.png</file>
+        <file>shachengbao.png</file>
+        <file>zhongyu.png</file>
+        <file>qing.png</file>
+        <file>ying.png</file>
+        <file>yu.png</file>
+        <file>zhenyu.png</file>
+        <file>zhongdaodayu.png</file>
+        <file>wu.png</file>
+        <file>yangsha.png</file>
+        <file>yujiaxue.png</file>
+        <file>pm25.png</file>
+        <file>shidu.png</file>
+        <file>citycode.json</file>
+        <file>R-C(1)_888x500.gif</file>
+        <file>assistant.png</file>
+        <file>ditu.png</file>
     </qresource>
 </RCC>

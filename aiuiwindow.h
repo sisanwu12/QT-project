@@ -1,6 +1,6 @@
 #ifndef AIUIWINDOW_H
 #define AIUIWINDOW_H
-#include "AIUI_V2.h"
+#include "aiui/AIUI_V2.h"
 #include <QDebug>
 
 // AIUI监听器类,用于处理AIUI事件

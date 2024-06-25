@@ -10,7 +10,6 @@
 #define UI_WEATHER_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
@@ -25,13 +24,11 @@ QT_BEGIN_NAMESPACE
 class Ui_weather
 {
 public:
-    QLineEdit *lineEdit;
-    QPushButton *foundButton;
     QWidget *widget;
     QWidget *widget_24;
     QLabel *lbDate_4;
     QLineEdit *leCity_4;
-    QPushButton *btnSearch_4;
+    QPushButton *searchButton;
     QWidget *widget_25;
     QLabel *lbGaoMao_4;
     QWidget *widget_26;
@@ -46,6 +43,7 @@ public:
     QLabel *lbShiDu_4;
     QLabel *lbShiDuTitle_4;
     QLabel *lblQuality_4;
+    QLabel *label_4;
     QWidget *widget_27;
     QLabel *lbTypeIcon_4;
     QWidget *layoutWidget_4;
@@ -72,18 +70,18 @@ public:
     QLabel *lblDate5_4;
     QWidget *widget_30;
     QGridLayout *gridLayout_19;
-    QLabel *lblTypeIcon0_4;
-    QLabel *lblTypeIcon4_4;
-    QLabel *lblTypeIcon2_4;
-    QLabel *lblTypeIcon1_4;
-    QLabel *lblTypeIcon3_4;
     QLabel *lblType5_4;
-    QLabel *lblType3_4;
-    QLabel *lblType2_4;
-    QLabel *lblType0_4;
     QLabel *lblType1_4;
-    QLabel *lblTypeIcon5_4;
     QLabel *lblType4_4;
+    QLabel *lblType3_4;
+    QLabel *lblTypeIcon0_4;
+    QLabel *lblType0_4;
+    QLabel *lblTypeIcon1_4;
+    QLabel *lblType2_4;
+    QLabel *lblTypeIcon3_4;
+    QLabel *lblTypeIcon2_4;
+    QLabel *lblTypeIcon4_4;
+    QLabel *lblTypeIcon5_4;
     QWidget *widget_31;
     QHBoxLayout *horizontalLayout_23;
     QLabel *lblQuality0_4;
@@ -92,10 +90,6 @@ public:
     QLabel *lblQuality3_4;
     QLabel *lblQuality4_4;
     QLabel *lblQuality5_4;
-    QWidget *widget_32;
-    QVBoxLayout *verticalLayout_28;
-    QLabel *lblHighCurve_4;
-    QLabel *lblLowCurve_4;
     QWidget *widget_33;
     QGridLayout *gridLayout_20;
     QLabel *lblFx0_4;
@@ -116,12 +110,6 @@ public:
         if (weather->objectName().isEmpty())
             weather->setObjectName("weather");
         weather->resize(819, 675);
-        lineEdit = new QLineEdit(weather);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(40, 20, 161, 21));
-        foundButton = new QPushButton(weather);
-        foundButton->setObjectName("foundButton");
-        foundButton->setGeometry(QRect(220, 10, 41, 41));
         widget = new QWidget(weather);
         widget->setObjectName("widget");
         widget->setGeometry(QRect(-10, 0, 831, 701));
@@ -149,14 +137,14 @@ public:
         leCity_4->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 255);\n"
 "border-radius:10px;\n"
 "padding:2px 4px"));
-        btnSearch_4 = new QPushButton(widget_24);
-        btnSearch_4->setObjectName("btnSearch_4");
-        btnSearch_4->setGeometry(QRect(238, 15, 31, 31));
-        btnSearch_4->setStyleSheet(QString::fromUtf8("border-radius:5px;\n"
-"background-color: rgb(0, 253, 255);"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/res/search.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        btnSearch_4->setIcon(icon);
+        searchButton = new QPushButton(widget_24);
+        searchButton->setObjectName("searchButton");
+        searchButton->setGeometry(QRect(250, 10, 41, 41));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(searchButton->sizePolicy().hasHeightForWidth());
+        searchButton->setSizePolicy(sizePolicy);
         widget_25 = new QWidget(widget);
         widget_25->setObjectName("widget_25");
         widget_25->setGeometry(QRect(40, 200, 342, 251));
@@ -167,7 +155,7 @@ public:
         widget_26 = new QWidget(widget_25);
         widget_26->setObjectName("widget_26");
         widget_26->setGeometry(QRect(0, 123, 281, 131));
-        widget_26->setStyleSheet(QString::fromUtf8("background-color: rgb(65, 156, 255);\n"
+        widget_26->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 255);\n"
 "border-radius: 15px"));
         lblQualityTitle_4 = new QLabel(widget_26);
         lblQualityTitle_4->setObjectName("lblQualityTitle_4");
@@ -179,9 +167,16 @@ public:
         label = new QLabel(widget_26);
         label->setObjectName("label");
         label->setGeometry(QRect(160, 10, 51, 51));
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy1);
+        label->setStyleSheet(QString::fromUtf8("image: url(:/pm25.png);"));
         label_2 = new QLabel(widget_26);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(10, 80, 40, 31));
+        label_2->setGeometry(QRect(10, 80, 41, 41));
+        label_2->setStyleSheet(QString::fromUtf8("image: url(:/shidu.png);"));
         label_3 = new QLabel(widget_26);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(10, 20, 40, 41));
@@ -221,6 +216,13 @@ public:
         lblQuality_4->setGeometry(QRect(220, 100, 31, 20));
         lblQuality_4->setFont(font1);
         lblQuality_4->setAlignment(Qt::AlignCenter);
+        label_4 = new QLabel(widget_26);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(160, 80, 51, 51));
+        sizePolicy1.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
+        label_4->setSizePolicy(sizePolicy1);
+        label_4->setStyleSheet(QString::fromUtf8("image: url(:/aqi.png);"));
+        label_4->setScaledContents(true);
         widget_27 = new QWidget(widget);
         widget_27->setObjectName("widget_27");
         widget_27->setGeometry(QRect(20, 60, 320, 120));
@@ -268,7 +270,7 @@ public:
 
         widget_28 = new QWidget(widget);
         widget_28->setObjectName("widget_28");
-        widget_28->setGeometry(QRect(360, 20, 421, 391));
+        widget_28->setGeometry(QRect(380, 60, 441, 431));
         verticalLayout_27 = new QVBoxLayout(widget_28);
         verticalLayout_27->setSpacing(0);
         verticalLayout_27->setObjectName("verticalLayout_27");
@@ -389,6 +391,8 @@ public:
 
         widget_30 = new QWidget(widget_28);
         widget_30->setObjectName("widget_30");
+        sizePolicy.setHeightForWidth(widget_30->sizePolicy().hasHeightForWidth());
+        widget_30->setSizePolicy(sizePolicy);
         widget_30->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background-color: rgba(60, 60, 60, 100);\n"
 "	border-radius: 4px;\n"
@@ -397,109 +401,137 @@ public:
         gridLayout_19->setObjectName("gridLayout_19");
         gridLayout_19->setVerticalSpacing(0);
         gridLayout_19->setContentsMargins(-1, 5, -1, 5);
-        lblTypeIcon0_4 = new QLabel(widget_30);
-        lblTypeIcon0_4->setObjectName("lblTypeIcon0_4");
-        lblTypeIcon0_4->setMinimumSize(QSize(0, 0));
-        lblTypeIcon0_4->setMaximumSize(QSize(1000, 1000));
-        lblTypeIcon0_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;"));
-        lblTypeIcon0_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/Qing.png")));
-        lblTypeIcon0_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblTypeIcon0_4, 0, 0, 1, 1);
-
-        lblTypeIcon4_4 = new QLabel(widget_30);
-        lblTypeIcon4_4->setObjectName("lblTypeIcon4_4");
-        lblTypeIcon4_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;"));
-        lblTypeIcon4_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/ZhongYu.png")));
-        lblTypeIcon4_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblTypeIcon4_4, 0, 4, 1, 1);
-
-        lblTypeIcon2_4 = new QLabel(widget_30);
-        lblTypeIcon2_4->setObjectName("lblTypeIcon2_4");
-        lblTypeIcon2_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;"));
-        lblTypeIcon2_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/DuoYun.png")));
-        lblTypeIcon2_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblTypeIcon2_4, 0, 2, 1, 1);
-
-        lblTypeIcon1_4 = new QLabel(widget_30);
-        lblTypeIcon1_4->setObjectName("lblTypeIcon1_4");
-        lblTypeIcon1_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;"));
-        lblTypeIcon1_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/XiaoYu.png")));
-        lblTypeIcon1_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblTypeIcon1_4, 0, 1, 1, 1);
-
-        lblTypeIcon3_4 = new QLabel(widget_30);
-        lblTypeIcon3_4->setObjectName("lblTypeIcon3_4");
-        lblTypeIcon3_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;"));
-        lblTypeIcon3_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/DuoYun.png")));
-        lblTypeIcon3_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblTypeIcon3_4, 0, 3, 1, 1);
-
         lblType5_4 = new QLabel(widget_30);
         lblType5_4->setObjectName("lblType5_4");
         lblType5_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
 "border-top-right-radius: 0px;"));
         lblType5_4->setAlignment(Qt::AlignCenter);
 
-        gridLayout_19->addWidget(lblType5_4, 1, 5, 1, 1);
-
-        lblType3_4 = new QLabel(widget_30);
-        lblType3_4->setObjectName("lblType3_4");
-        lblType3_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
-"border-top-right-radius: 0px;"));
-        lblType3_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblType3_4, 1, 3, 1, 1);
-
-        lblType2_4 = new QLabel(widget_30);
-        lblType2_4->setObjectName("lblType2_4");
-        lblType2_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
-"border-top-right-radius: 0px;"));
-        lblType2_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblType2_4, 1, 2, 1, 1);
-
-        lblType0_4 = new QLabel(widget_30);
-        lblType0_4->setObjectName("lblType0_4");
-        lblType0_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
-"border-top-right-radius: 0px;"));
-        lblType0_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblType0_4, 1, 0, 1, 1);
+        gridLayout_19->addWidget(lblType5_4, 3, 5, 1, 1);
 
         lblType1_4 = new QLabel(widget_30);
         lblType1_4->setObjectName("lblType1_4");
+        sizePolicy.setHeightForWidth(lblType1_4->sizePolicy().hasHeightForWidth());
+        lblType1_4->setSizePolicy(sizePolicy);
         lblType1_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
 "border-top-right-radius: 0px;"));
         lblType1_4->setAlignment(Qt::AlignCenter);
 
-        gridLayout_19->addWidget(lblType1_4, 1, 1, 1, 1);
-
-        lblTypeIcon5_4 = new QLabel(widget_30);
-        lblTypeIcon5_4->setObjectName("lblTypeIcon5_4");
-        lblTypeIcon5_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;"));
-        lblTypeIcon5_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/BaoYu.png")));
-        lblTypeIcon5_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_19->addWidget(lblTypeIcon5_4, 0, 5, 1, 1);
+        gridLayout_19->addWidget(lblType1_4, 3, 1, 1, 1);
 
         lblType4_4 = new QLabel(widget_30);
         lblType4_4->setObjectName("lblType4_4");
+        sizePolicy.setHeightForWidth(lblType4_4->sizePolicy().hasHeightForWidth());
+        lblType4_4->setSizePolicy(sizePolicy);
         lblType4_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
 "border-top-right-radius: 0px;"));
         lblType4_4->setAlignment(Qt::AlignCenter);
 
-        gridLayout_19->addWidget(lblType4_4, 1, 4, 1, 1);
+        gridLayout_19->addWidget(lblType4_4, 3, 4, 1, 1);
+
+        lblType3_4 = new QLabel(widget_30);
+        lblType3_4->setObjectName("lblType3_4");
+        sizePolicy.setHeightForWidth(lblType3_4->sizePolicy().hasHeightForWidth());
+        lblType3_4->setSizePolicy(sizePolicy);
+        lblType3_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
+"border-top-right-radius: 0px;"));
+        lblType3_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblType3_4, 3, 3, 1, 1);
+
+        lblTypeIcon0_4 = new QLabel(widget_30);
+        lblTypeIcon0_4->setObjectName("lblTypeIcon0_4");
+        sizePolicy.setHeightForWidth(lblTypeIcon0_4->sizePolicy().hasHeightForWidth());
+        lblTypeIcon0_4->setSizePolicy(sizePolicy);
+        lblTypeIcon0_4->setMinimumSize(QSize(0, 0));
+        lblTypeIcon0_4->setMaximumSize(QSize(1000, 1000));
+        lblTypeIcon0_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;"));
+        lblTypeIcon0_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/Qing.png")));
+        lblTypeIcon0_4->setScaledContents(true);
+        lblTypeIcon0_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblTypeIcon0_4, 0, 0, 2, 1);
+
+        lblType0_4 = new QLabel(widget_30);
+        lblType0_4->setObjectName("lblType0_4");
+        sizePolicy.setHeightForWidth(lblType0_4->sizePolicy().hasHeightForWidth());
+        lblType0_4->setSizePolicy(sizePolicy);
+        lblType0_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
+"border-top-right-radius: 0px;"));
+        lblType0_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblType0_4, 3, 0, 1, 1);
+
+        lblTypeIcon1_4 = new QLabel(widget_30);
+        lblTypeIcon1_4->setObjectName("lblTypeIcon1_4");
+        sizePolicy.setHeightForWidth(lblTypeIcon1_4->sizePolicy().hasHeightForWidth());
+        lblTypeIcon1_4->setSizePolicy(sizePolicy);
+        lblTypeIcon1_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;"));
+        lblTypeIcon1_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/XiaoYu.png")));
+        lblTypeIcon1_4->setScaledContents(true);
+        lblTypeIcon1_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblTypeIcon1_4, 0, 1, 2, 1);
+
+        lblType2_4 = new QLabel(widget_30);
+        lblType2_4->setObjectName("lblType2_4");
+        sizePolicy.setHeightForWidth(lblType2_4->sizePolicy().hasHeightForWidth());
+        lblType2_4->setSizePolicy(sizePolicy);
+        lblType2_4->setStyleSheet(QString::fromUtf8("border-top-left-radius: 0px;\n"
+"border-top-right-radius: 0px;"));
+        lblType2_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblType2_4, 3, 2, 1, 1);
+
+        lblTypeIcon3_4 = new QLabel(widget_30);
+        lblTypeIcon3_4->setObjectName("lblTypeIcon3_4");
+        sizePolicy.setHeightForWidth(lblTypeIcon3_4->sizePolicy().hasHeightForWidth());
+        lblTypeIcon3_4->setSizePolicy(sizePolicy);
+        lblTypeIcon3_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;"));
+        lblTypeIcon3_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/DuoYun.png")));
+        lblTypeIcon3_4->setScaledContents(true);
+        lblTypeIcon3_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblTypeIcon3_4, 0, 3, 2, 1);
+
+        lblTypeIcon2_4 = new QLabel(widget_30);
+        lblTypeIcon2_4->setObjectName("lblTypeIcon2_4");
+        sizePolicy.setHeightForWidth(lblTypeIcon2_4->sizePolicy().hasHeightForWidth());
+        lblTypeIcon2_4->setSizePolicy(sizePolicy);
+        lblTypeIcon2_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;"));
+        lblTypeIcon2_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/DuoYun.png")));
+        lblTypeIcon2_4->setScaledContents(true);
+        lblTypeIcon2_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblTypeIcon2_4, 0, 2, 2, 1);
+
+        lblTypeIcon4_4 = new QLabel(widget_30);
+        lblTypeIcon4_4->setObjectName("lblTypeIcon4_4");
+        sizePolicy.setHeightForWidth(lblTypeIcon4_4->sizePolicy().hasHeightForWidth());
+        lblTypeIcon4_4->setSizePolicy(sizePolicy);
+        lblTypeIcon4_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;"));
+        lblTypeIcon4_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/ZhongYu.png")));
+        lblTypeIcon4_4->setScaledContents(true);
+        lblTypeIcon4_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblTypeIcon4_4, 0, 4, 2, 1);
+
+        lblTypeIcon5_4 = new QLabel(widget_30);
+        lblTypeIcon5_4->setObjectName("lblTypeIcon5_4");
+        sizePolicy.setHeightForWidth(lblTypeIcon5_4->sizePolicy().hasHeightForWidth());
+        lblTypeIcon5_4->setSizePolicy(sizePolicy);
+        lblTypeIcon5_4->setStyleSheet(QString::fromUtf8("border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;"));
+        lblTypeIcon5_4->setPixmap(QPixmap(QString::fromUtf8(":/res/type/BaoYu.png")));
+        lblTypeIcon5_4->setScaledContents(true);
+        lblTypeIcon5_4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(lblTypeIcon5_4, 0, 5, 2, 1);
 
 
         verticalLayout_27->addWidget(widget_30);
@@ -555,43 +587,6 @@ public:
 
 
         verticalLayout_27->addWidget(widget_31);
-
-        widget_32 = new QWidget(widget_28);
-        widget_32->setObjectName("widget_32");
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(widget_32->sizePolicy().hasHeightForWidth());
-        widget_32->setSizePolicy(sizePolicy);
-        verticalLayout_28 = new QVBoxLayout(widget_32);
-        verticalLayout_28->setSpacing(1);
-        verticalLayout_28->setObjectName("verticalLayout_28");
-        verticalLayout_28->setSizeConstraint(QLayout::SetDefaultConstraint);
-        verticalLayout_28->setContentsMargins(-1, 5, -1, 5);
-        lblHighCurve_4 = new QLabel(widget_32);
-        lblHighCurve_4->setObjectName("lblHighCurve_4");
-        sizePolicy.setHeightForWidth(lblHighCurve_4->sizePolicy().hasHeightForWidth());
-        lblHighCurve_4->setSizePolicy(sizePolicy);
-        lblHighCurve_4->setMinimumSize(QSize(0, 0));
-        lblHighCurve_4->setMaximumSize(QSize(10000, 10000));
-        lblHighCurve_4->setStyleSheet(QString::fromUtf8("background-color: rgba(60, 60, 60,60);"));
-        lblHighCurve_4->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_28->addWidget(lblHighCurve_4);
-
-        lblLowCurve_4 = new QLabel(widget_32);
-        lblLowCurve_4->setObjectName("lblLowCurve_4");
-        sizePolicy.setHeightForWidth(lblLowCurve_4->sizePolicy().hasHeightForWidth());
-        lblLowCurve_4->setSizePolicy(sizePolicy);
-        lblLowCurve_4->setMinimumSize(QSize(0, 0));
-        lblLowCurve_4->setMaximumSize(QSize(10000, 10000));
-        lblLowCurve_4->setStyleSheet(QString::fromUtf8("background-color: rgba(60, 60, 60,60);"));
-        lblLowCurve_4->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_28->addWidget(lblLowCurve_4);
-
-
-        verticalLayout_27->addWidget(widget_32);
 
         widget_33 = new QWidget(widget_28);
         widget_33->setObjectName("widget_33");
@@ -716,14 +711,13 @@ public:
     void retranslateUi(QWidget *weather)
     {
         weather->setWindowTitle(QCoreApplication::translate("weather", "Form", nullptr));
-        foundButton->setText(QString());
         lbDate_4->setText(QCoreApplication::translate("weather", "2024/6/18 \346\230\237\346\234\237\345\205\255", nullptr));
         leCity_4->setPlaceholderText(QCoreApplication::translate("weather", "\350\257\267\350\276\223\345\205\245\350\246\201\346\237\245\350\257\242\347\232\204\345\237\216\345\270\202", nullptr));
-        btnSearch_4->setText(QString());
+        searchButton->setText(QString());
         lbGaoMao_4->setText(QCoreApplication::translate("weather", "\346\204\237\345\206\222\346\214\207\346\225\260\357\274\232\345\204\277\347\253\245\343\200\201\350\200\201\345\271\264\344\272\272\345\217\212\345\277\203\350\204\217\343\200\201\345\221\274\345\220\270\347\263\273\347\273\237\347\226\276\347\227\205\346\202\243\350\200\205\344\272\272\347\276\244\345\272\224\345\207\217\345\260\221\351\225\277\346\227\266\351\227\264\346\210\226\351\253\230\345\274\272\345\272\246\346\210\267\345\244\226\351\224\273\347\202\274", nullptr));
         lblQualityTitle_4->setText(QCoreApplication::translate("weather", "\347\251\272\346\260\224\350\264\250\351\207\217", nullptr));
-        label->setText(QCoreApplication::translate("weather", "TextLabel", nullptr));
-        label_2->setText(QCoreApplication::translate("weather", "TextLabel", nullptr));
+        label->setText(QString());
+        label_2->setText(QString());
         label_3->setText(QString());
         lbPm25Title_4->setText(QCoreApplication::translate("weather", "PM2.5", nullptr));
         lbPm25_4->setText(QCoreApplication::translate("weather", "10", nullptr));
@@ -732,6 +726,7 @@ public:
         lbShiDu_4->setText(QCoreApplication::translate("weather", "3\347\272\247", nullptr));
         lbShiDuTitle_4->setText(QCoreApplication::translate("weather", "\346\271\277\345\272\246", nullptr));
         lblQuality_4->setText(QCoreApplication::translate("weather", "3\347\272\247", nullptr));
+        label_4->setText(QString());
         lbTypeIcon_4->setText(QString());
         lbType_4->setText(QCoreApplication::translate("weather", "\346\231\264\345\244\251", nullptr));
         lbLowHigh_4->setText(QCoreApplication::translate("weather", "19\342\204\203~32\342\204\203", nullptr));
@@ -749,26 +744,24 @@ public:
         lblDate3_4->setText(QCoreApplication::translate("weather", "01/04", nullptr));
         lblDate4_4->setText(QCoreApplication::translate("weather", "01/05", nullptr));
         lblDate5_4->setText(QCoreApplication::translate("weather", "01/06", nullptr));
-        lblTypeIcon0_4->setText(QString());
-        lblTypeIcon4_4->setText(QString());
-        lblTypeIcon2_4->setText(QString());
-        lblTypeIcon1_4->setText(QString());
-        lblTypeIcon3_4->setText(QString());
         lblType5_4->setText(QCoreApplication::translate("weather", "\346\232\264\351\233\250", nullptr));
-        lblType3_4->setText(QCoreApplication::translate("weather", "\345\244\232\344\272\221", nullptr));
-        lblType2_4->setText(QCoreApplication::translate("weather", "\345\244\232\344\272\221", nullptr));
-        lblType0_4->setText(QCoreApplication::translate("weather", "\346\231\264", nullptr));
         lblType1_4->setText(QCoreApplication::translate("weather", "\345\260\217\351\233\250", nullptr));
-        lblTypeIcon5_4->setText(QString());
         lblType4_4->setText(QCoreApplication::translate("weather", "\344\270\255\351\233\250", nullptr));
+        lblType3_4->setText(QCoreApplication::translate("weather", "\345\244\232\344\272\221", nullptr));
+        lblTypeIcon0_4->setText(QString());
+        lblType0_4->setText(QCoreApplication::translate("weather", "\346\231\264", nullptr));
+        lblTypeIcon1_4->setText(QString());
+        lblType2_4->setText(QCoreApplication::translate("weather", "\345\244\232\344\272\221", nullptr));
+        lblTypeIcon3_4->setText(QString());
+        lblTypeIcon2_4->setText(QString());
+        lblTypeIcon4_4->setText(QString());
+        lblTypeIcon5_4->setText(QString());
         lblQuality0_4->setText(QCoreApplication::translate("weather", "\344\274\230", nullptr));
         lblQuality1_4->setText(QCoreApplication::translate("weather", "\350\211\257", nullptr));
         lblQuality2_4->setText(QCoreApplication::translate("weather", "\350\275\273\345\272\246", nullptr));
         lblQuality3_4->setText(QCoreApplication::translate("weather", "\344\270\255\345\272\246", nullptr));
         lblQuality4_4->setText(QCoreApplication::translate("weather", "\351\207\215\345\272\246", nullptr));
         lblQuality5_4->setText(QCoreApplication::translate("weather", "\344\270\245\351\207\215", nullptr));
-        lblHighCurve_4->setText(QString());
-        lblLowCurve_4->setText(QString());
         lblFx0_4->setText(QCoreApplication::translate("weather", "\344\270\234\351\243\216", nullptr));
         lblFx1_4->setText(QCoreApplication::translate("weather", "\344\270\234\345\214\227\351\243\216", nullptr));
         lblFx2_4->setText(QCoreApplication::translate("weather", "\350\245\277\345\214\227\351\243\216", nullptr));

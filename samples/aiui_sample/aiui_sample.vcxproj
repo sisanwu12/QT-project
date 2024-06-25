@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{18D3D7C2-2AC1-46F4-BDEF-98157DA4BA6A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>demo</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\jsoncpp;$(ProjectDir)..\..\include\aiui;$(ProjectDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>aiui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\libs\x86</AdditionalLibraryDirectories>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)..\bin_$(PlatformTarget)" 2&gt;nul
+XCOPY /Y /Q /D "$(TargetPath)" "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /Y /Q /D "$(SolutionDir)..\libs\$(PlatformTarget)\aiui.dll"  "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /Y /Q /D "$(SolutionDir)..\libs\$(PlatformTarget)\vtn_mic1.dll"  "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /E /C /Y /Q /D "$(SolutionDir)AIUI" "$(SolutionDir)..\bin_$(PlatformTarget)\AIUI\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\jsoncpp;$(ProjectDir)..\..\include\aiui;$(ProjectDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\libs\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>aiui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)..\bin_$(PlatformTarget)" 2&gt;nul
+XCOPY /Y /Q /D "$(TargetPath)" "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /Y /Q /D "$(SolutionDir)..\libs\$(PlatformTarget)\aiui.dll"  "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /Y /Q /D "$(SolutionDir)..\libs\$(PlatformTarget)\vtn_mic1.dll"  "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /E /C /Y /Q /D "$(SolutionDir)AIUI" "$(SolutionDir)..\bin_$(PlatformTarget)\AIUI\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\jsoncpp;$(ProjectDir)..\..\include\aiui;$(ProjectDir)..\..\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\libs\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>aiui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)..\bin_$(PlatformTarget)" 2&gt;nul
+XCOPY /Y /Q /D "$(TargetPath)" "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /Y /Q /D "$(SolutionDir)..\libs\$(PlatformTarget)\aiui.dll"  "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /Y /Q /D "$(SolutionDir)..\libs\$(PlatformTarget)\vtn_mic1.dll"  "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /E /C /Y /Q /D "$(SolutionDir)AIUI" "$(SolutionDir)..\bin_$(PlatformTarget)\AIUI\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AIUI_WINDOWS;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\jsoncpp;$(ProjectDir)..\..\include\aiui;$(ProjectDir)..\..\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\libs\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>aiui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)..\bin_$(PlatformTarget)" 2&gt;nul
+XCOPY /Y /Q /D "$(TargetPath)" "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /Y /Q /D "$(SolutionDir)..\libs\$(PlatformTarget)\aiui.dll"  "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /Y /Q /D "$(SolutionDir)..\libs\$(PlatformTarget)\vtn_mic1.dll"  "$(SolutionDir)..\bin_$(PlatformTarget)"
+XCOPY /E /C /Y /Q /D "$(SolutionDir)AIUI" "$(SolutionDir)..\bin_$(PlatformTarget)\AIUI\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\demo.cpp" />
+    <ClCompile Include="src\jsoncpp\json_reader.cpp" />
+    <ClCompile Include="src\jsoncpp\json_value.cpp" />
+    <ClCompile Include="src\jsoncpp\json_writer.cpp" />
+    <ClCompile Include="src\utils\Base64Util.cpp" />
+    <ClCompile Include="src\utils\ConvertUtil.cpp" />
+    <ClCompile Include="src\utils\IatResultUtil.cpp" />
+    <ClCompile Include="src\utils\StreamNlpTtsHelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\aiui\AIUI.h" />
+    <ClInclude Include="..\..\include\aiui\AIUICommon.h" />
+    <ClInclude Include="..\..\include\aiui\AIUIConstant.h" />
+    <ClInclude Include="..\..\include\aiui\AIUIErrorCode.h" />
+    <ClInclude Include="..\..\include\aiui\AIUIType.h" />
+    <ClInclude Include="..\..\include\aiui\AIUI_C.h" />
+    <ClInclude Include="..\..\include\aiui\AIUI_V2.h" />
+    <ClInclude Include="src\jsoncpp\json\assertions.h" />
+    <ClInclude Include="src\jsoncpp\json\autolink.h" />
+    <ClInclude Include="src\jsoncpp\json\config.h" />
+    <ClInclude Include="src\jsoncpp\json\features.h" />
+    <ClInclude Include="src\jsoncpp\json\forwards.h" />
+    <ClInclude Include="src\jsoncpp\json\json.h" />
+    <ClInclude Include="src\jsoncpp\json\reader.h" />
+    <ClInclude Include="src\jsoncpp\json\value.h" />
+    <ClInclude Include="src\jsoncpp\json\version.h" />
+    <ClInclude Include="src\jsoncpp\json\writer.h" />
+    <ClInclude Include="src\jsoncpp\json_batchallocator.h" />
+    <ClInclude Include="src\jsoncpp\json_tool.h" />
+    <ClInclude Include="src\utils\Base64Util.h" />
+    <ClInclude Include="src\utils\ConvertUtil.h" />
+    <ClInclude Include="src\utils\IatResultUtil.h" />
+    <ClInclude Include="src\utils\StreamNlpTtsHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\jsoncpp\json_internalarray.inl" />
+    <None Include="src\jsoncpp\json_internalmap.inl" />
+    <None Include="src\jsoncpp\json_valueiterator.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
