@@ -46,13 +46,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     IMg.qrc
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/release/ -laiui
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/debug/ -laiui
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/x64/ -laiui
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/x64/ -laiui
 
 INCLUDEPATH += $$PWD/include/aiui
 DEPENDPATH += $$PWD/include/aiui
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libs/release/libaiui.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libs/debug/libaiui.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libs/release/aiui.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libs/debug/aiui.lib
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libs/x64/libaiui.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libs/x64/libaiui.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libs/x64/aiui.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libs/x64/aiui.lib
